@@ -1,0 +1,3 @@
+{
+  "extends": "@spazastock/config/tsconfig.base.json"
+}
