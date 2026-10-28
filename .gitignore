@@ -1,58 +1,59 @@
-# Dependencies
-node_modules
-.pnp
-.pnp.js
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
-# Build outputs
-dist
-build
-*.tsbuildinfo
+# dependencies
+node_modules/
 
-# Generated files
-apps/web/src/routeTree.gen.ts
-local.db
-local.db-*
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
 
-# Environment variables
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
 .env
 .env*.local
 
-# IDEs and editors
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.idea
-*.swp
-*.swo
-*~
-.DS_Store
+# typescript
+*.tsbuildinfo
 
-# Logs
-logs
-.evlog/
+# generated native folders
+/ios
+/android
+
+# UniWind generated types
+uniwind-types.d.ts
+
+!.env.schema
+/src/env.ts
+
+# Build outputs
+build/
+
+# Local sqlite
+local.db
+local.db-*
+
+# Logs / coverage
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-.pnpm-debug.log*
-
-# Turbo
-.turbo
-.nx
-
-# Better-T-Stack
-.alchemy
-.vercel
-
-# Testing
-coverage
-.nyc_output
-
-# Misc
-*.tgz
-.cache
-tmp
-temp
+coverage/

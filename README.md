@@ -1,52 +1,37 @@
-# spazastock
+# Spaza OS
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines React Native, Expo, and more.
-
-## Features
-
-- **TypeScript** - For type safety and improved developer experience
-- **React Native** - Build mobile apps using React
-- **Expo** - Tools for React Native development
-- **TailwindCSS** - Utility-first CSS for rapid UI development
-- **Turborepo** - Optimized monorepo build system
+Offline-first Expo + React Native operating system for spaza shops. It keeps sales,
+stock, credit tabs and cash-ups in local SQLite, and includes a local quick-note
+co-pilot for stock and credit updates without a network connection.
 
 ## Getting Started
 
-First, install the dependencies:
+Install dependencies:
 
 ```bash
 bun install
 ```
 
-Then, run the development server:
+Then run the development server:
 
 ```bash
 bun run dev
 ```
 
-Use the Expo Go app to run the mobile application.
+Use the Expo Go app or a development build to run the mobile application.
 
 ## Environment Configuration
 
-Each app owns its environment schema in `.env.schema`. Varlock generates `src/env.ts` during installation; run `bun run env:generate` after changing a schema. Commit schemas, and keep secrets in ignored env files or your deployment platform.
+The environment schema lives in `.env.schema`. Varlock generates `src/env.ts` during installation; run `bun run env:generate` after changing the schema. Commit the schema, and keep secrets in ignored env files or your deployment platform.
 
-Import the generated `ENV` accessor in application code. Shared database and auth packages receive configuration or initialized clients from the application. See [Varlock's monorepo guide](https://varlock.dev/guides/monorepos/).
+Import the generated `ENV` accessor in application code.
 
-Bun's automatic env loading is disabled in `bunfig.toml`; the framework integration or server bootstrap loads Varlock. Node deployments must include Varlock and its dependencies alongside the app schema.
-
-Run standalone Node/Bun tools that use Varlock from the owning app directory so they load that app's schema and env files. `env:generate` only generates TypeScript files; it does not initialize environment values in a subsequent command.
-
-## Project Structure
-
-```
-spazastock/
-├── apps/
-│   ├── native/      # Mobile application (React Native, Expo)
-```
+Bun's automatic env loading is disabled in `bunfig.toml`; the framework integration loads Varlock. Run standalone Node/Bun tools that use Varlock from the repo root so they load this schema and env files.
 
 ## Available Scripts
 
-- `bun run dev`: Start all applications in development mode
-- `bun run build`: Build all applications
-- `bun run check-types`: Check TypeScript types across all apps
-- `bun run dev:native`: Start the React Native/Expo development server
+- `bun run dev`: Start the Expo development server
+- `bun run android` / `bun run ios`: Run on device/emulator
+- `bun run web`: Start the web build
+- `bun run check-types`: Check TypeScript types
+- `bun run env:generate`: Regenerate `src/env.ts` from `.env.schema`

@@ -1,0 +1,90 @@
+{
+  "expo": {
+    "name": "Spaza OS",
+    "slug": "spazastock",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "spazastock",
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#06050B",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "versionCode": 3,
+      "package": "com.unsunglabs.spazastock",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.USE_FINGERPRINT",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#06050B",
+          "dark": {
+            "backgroundColor": "#06050B"
+          }
+        }
+      ],
+      "expo-sqlite",
+      "expo-sharing",
+      "@siteed/sherpa-onnx.rn",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Allow Spaza OS to record private shop notes."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Spaza OS to use the camera to scan product barcodes."
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow Spaza OS to use Face ID to protect your shop data."
+        }
+      ],
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": false,
+          "neverForLocation": true,
+          "bluetoothAlwaysPermission": "Allow Spaza OS to connect to your Bluetooth receipt printer."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "87a0b927-5b7f-48e2-aba5-c993257daec5"
+      }
+    }
+  }
+}
